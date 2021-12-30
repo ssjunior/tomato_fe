@@ -1,23 +1,25 @@
-import { Flex, Heading, Image } from "theme-ui";
+import { Flex, Heading } from "theme-ui";
 
 export const Default = ({ children, ...props }) => (
   <Flex
     sx={{
       minHeight: "100vh",
       overflow: "auto",
+      ...props,
     }}
   >
     <div
       sx={{
         flexDirection: "column",
-        borderRight: "1px solid #ededed",
+        // borderRight: "1px solid #ededed",
         width: 224,
         minWidth: 224,
         display: "flex",
         px: 3,
+        background: "#f4f4f4",
       }}
     >
-      <Heading>Header content</Heading>
+      <Heading>Sidemenu</Heading>
     </div>
 
     <div
@@ -33,7 +35,8 @@ export const Default = ({ children, ...props }) => (
           mx: "auto",
         }}
       >
-        <Heading>children</Heading>
+        <Heading>Main</Heading>
+        {children}
       </div>
     </div>
   </Flex>

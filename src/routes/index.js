@@ -10,8 +10,10 @@ const Element = ({ route }) => {
   const user = useSelector((state) => state["account"].user);
 
   const { admin, authenticated, moduleId, layout, view, ...props } = route;
+
   const Layout = LAYOUTS[layout];
-  const View = VIEWS[view];
+
+  const View = view;
 
   const isAdmin = admin === true || false;
   if (isAdmin && (!user || (user && !user.is_admin)))
@@ -21,16 +23,8 @@ const Element = ({ route }) => {
   if (isAuthenticated && !user) return VIEWS["Forbidden"]();
 
   return (
-    <Layout moduleId={moduleId} View={View} {...props}>
-      <div
-        sx={{
-          fontWeight: "bold",
-          fontSize: 3,
-          color: "primary",
-        }}
-      >
-        {route.view}
-      </div>
+    <Layout moduleId={moduleId}>
+      <View moduleId={moduleId} {...props} />
     </Layout>
   );
 };

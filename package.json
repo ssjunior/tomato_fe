@@ -1,16 +1,25 @@
 {
-  "name": "fe_boilerplate",
+  "name": "React18Boilerplate",
+  "version": "1.0.0",
+  "description": "React 18 boilerplate with webpack",
+  "main": "index.js",
+  "author": "Stamatios Stamou Jr",
+  "license": "MIT",
   "packageManager": "yarn@3.1.1",
   "dependencies": {
+    "@emotion/is-prop-valid": "^1.1.1",
+    "@emotion/react": "^11.7.1",
+    "@emotion/styled": "^11.6.0",
+    "@mdx-js/react": "^1.6.22",
     "@reduxjs/toolkit": "^1.7.1",
-    "i18next": "^21.6.3",
+    "i18next": "^21.6.4",
     "install": "^0.13.0",
-    "react": "next",
-    "react-dom": "next",
-    "react-i18next": "^11.15.1",
+    "react": "^18.0.0-rc.0-next-3dc41d8a2-20211223",
+    "react-dom": "^18.0.0-rc.0-next-3dc41d8a2-20211223",
+    "react-i18next": "^11.15.2",
     "react-redux": "^7.2.6",
     "react-router-dom": "^6.2.1",
-    "theme-ui": "^0.12.1"
+    "theme-ui": "^0.13.0"
   },
   "scripts": {
     "start": "webpack serve --config ./webpack/webpack.dev.js --mode development",
@@ -41,6 +50,7 @@
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-react": "^7.16.5",
     "babel-loader": "^8.2.3",
+    "babel-preset-airbnb": "^5.0.0",
     "copy-webpack-plugin": "^10.2.0",
     "eslint": "^8.5.0",
     "eslint-config-react-app": "^7.0.0",
@@ -61,7 +71,7 @@
     "web-vitals": "^2.1.2",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
-    "webpack-dev-server": "^4.7.1",
+    "webpack-dev-server": "^4.7.2",
     "webpack-manifest-plugin": "^4.0.2",
     "yarn-upgrade-all": "^0.5.4"
   }

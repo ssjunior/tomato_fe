@@ -1,13 +1,13 @@
 var fs = require("fs");
 
 module.exports = {
-  input: ["src/**/*.{js,jsx}", "node_modules/tomato/src/**/*.{js,jsx}"],
+  input: ["src/**/*.{js,jsx}"],
   output: "./",
   options: {
-    debug: true,
+    debug: false,
     func: {
       list: ["i18next.t", "i18n.t", "t"],
-      extensions: [".js", ".jsx"]
+      extensions: [".js", ".jsx"],
     },
     trans: {
       component: "Trans",
@@ -19,8 +19,8 @@ module.exports = {
       },
       acorn: {
         ecmaVersion: 10,
-        sourceType: "module"
-      }
+        sourceType: "module",
+      },
     },
     lngs: ["pt-BR"],
     ns: ["locale"],
@@ -31,14 +31,14 @@ module.exports = {
       loadPath: "src/translations/{{lng}}/{{ns}}.json",
       savePath: "src/translations/{{lng}}/{{ns}}.json",
       jsonIndent: 2,
-      lineEnding: "\n"
+      lineEnding: "\n",
     },
     nsSeparator: false,
     keySeparator: false,
     interpolation: {
       prefix: "{{",
-      suffix: "}}"
-    }
+      suffix: "}}",
+    },
   },
 
   transform: function customTransform(file, enc, done) {
@@ -53,12 +53,12 @@ module.exports = {
           key,
           Object.assign({}, options, {
             nsSeparator: false,
-            keySeparator: false
+            keySeparator: false,
           })
         );
       }
     );
 
     done();
-  }
+  },
 };
